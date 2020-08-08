@@ -7,6 +7,8 @@ public class HiResScreenShots : MonoBehaviour
     private int resWidth = 1280;
     private int resHeight = 752;
 
+    private int k = 12;
+
     private bool takeHiResShot = false;
 
     private void Start()
