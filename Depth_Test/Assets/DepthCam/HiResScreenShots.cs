@@ -26,6 +26,7 @@ public class HiResScreenShots : MonoBehaviour
         moveChild(model);
     }
 
+    //ScreenShot저장: ScreenShot/[model.name]/[format-depth or real]_[objectname]_[angle].png
     public string ScreenShotName(int width, int height, string name)
     {
         return string.Format("{0}/{1}_{2}_{3}.png",
@@ -87,7 +88,7 @@ public class HiResScreenShots : MonoBehaviour
         if (obj.transform.position.y > 0)
             transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z);
         else
-            transform.position = new Vector3(obj.transform.position.x, 3, obj.transform.position.z);
+            transform.position = new Vector3(obj.transform.position.x, 2f, obj.transform.position.z);
 
         //rotation
         //transform.rotation = new Quaternion(obj.transform.rotation.x, obj.transform.rotation.y, obj.transform.rotation.z, obj.transform.rotation.w);
