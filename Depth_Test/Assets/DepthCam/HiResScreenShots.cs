@@ -29,7 +29,7 @@ public class HiResScreenShots : MonoBehaviour
     public string ScreenShotName(int width, int height, string name)
     {
         return string.Format("{0}/{1}_{2}_{3}.png",
-                             Application.dataPath + "/ScreenShot",
+                             Application.dataPath + "/ScreenShot/"+model.name,
                              this.gameObject.name, name, Convert.ToString(angle) + "°");
         //System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss")
     }
@@ -87,8 +87,10 @@ public class HiResScreenShots : MonoBehaviour
         if (obj.transform.position.y > 0)
             transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z);
         else
-            transform.position = new Vector3(obj.transform.position.x, 2, obj.transform.position.z);
-        transform.rotation = new Quaternion(obj.transform.rotation.x, obj.transform.rotation.y, obj.transform.rotation.z, obj.transform.rotation.w);
+            transform.position = new Vector3(obj.transform.position.x, 3, obj.transform.position.z);
+
+        //rotation
+        //transform.rotation = new Quaternion(obj.transform.rotation.x, obj.transform.rotation.y, obj.transform.rotation.z, obj.transform.rotation.w);
 
         angle = 0;
         //StartCoroutine(TimeRotation(this.gameObject, 1f, 90f, obj));
