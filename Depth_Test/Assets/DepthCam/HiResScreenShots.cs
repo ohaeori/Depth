@@ -71,17 +71,28 @@ public class HiResScreenShots : MonoBehaviour
             repeat++;
         }
     }
-   
+
+    void StartRoutine(GameObject target, GameObject obj, float yAngle)
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            target.transform.Rotate(0, yAngle, 0);
+            ScreenShot(obj.name);
+            angle += 90;
+        }
+    }
+
     void moveChild(GameObject obj)
     {
-        if(obj.transform.position.y > 0)
+        if (obj.transform.position.y > 0)
             transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z);
         else
             transform.position = new Vector3(obj.transform.position.x, 2, obj.transform.position.z);
         transform.rotation = new Quaternion(obj.transform.rotation.x, obj.transform.rotation.y, obj.transform.rotation.z, obj.transform.rotation.w);
 
-        repeat = 0; angle = 0;
-        StartCoroutine(TimeRotation(this.gameObject, 1f, 90f, obj));
+        angle = 0;
+        //StartCoroutine(TimeRotation(this.gameObject, 1f, 90f, obj));
+        StartRoutine(this.gameObject, obj, 90f);
 
         if (obj.transform.childCount != 0)
         {
