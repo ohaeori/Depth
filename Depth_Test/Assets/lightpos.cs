@@ -11,7 +11,8 @@ public class lightpos : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        transform.position = new Vector3(OriginCam.transform.position.x, OriginCam.transform.position.y, OriginCam.transform.position.z);
+        transform.rotation = new Quaternion(OriginCam.transform.rotation.x, OriginCam.transform.rotation.y, OriginCam.transform.rotation.z, OriginCam.transform.rotation.w);
     }
 
     // Update is called once per frame
@@ -20,9 +21,9 @@ public class lightpos : MonoBehaviour
         
     }
 
-    private void LateUpdate()
-    {
-        transform.position = new Vector3(OriginCam.transform.position.x, OriginCam.transform.position.y, OriginCam.transform.position.z);
-        transform.rotation = new Quaternion(OriginCam.transform.rotation.x, OriginCam.transform.rotation.y, OriginCam.transform.rotation.z, OriginCam.transform.rotation.w);
-    }
+    //private void LateUpdate()
+    //{
+    //    transform.position = new Vector3(OriginCam.transform.position.x, OriginCam.transform.position.y, OriginCam.transform.position.z);
+    //    transform.rotation = new Quaternion(OriginCam.transform.rotation.x, OriginCam.transform.rotation.y, OriginCam.transform.rotation.z, OriginCam.transform.rotation.w);
+    //}
 }
